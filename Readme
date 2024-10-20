@@ -12,7 +12,7 @@ To compile the project and create the necessary executables, use the provided **
 
 ### Build the Project
 To compile the project, simply run the following command in the terminal:
-```
+```bash
 make
 ```
 Run the Program
