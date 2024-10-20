@@ -12,7 +12,7 @@ To compile the project and create the necessary executables, use the provided **
 
 ### Build the Project
 To compile the project, simply run the following command in the terminal:
-```bash
+```
 make
 ```
 Run the Program
@@ -24,18 +24,18 @@ CreatePokemons.out
 main.out
 To run any of these executables, use the following command:
 
-```bash
+```
 ./<executable_name>
 ```
 For example:
 
-```bash
+```
 ./main.out
 ```
 Clean the Project
 To clean up the compiled files, run:
 
-```bash
+```
 make clean
 ```
 Language Elements
@@ -44,7 +44,7 @@ The DSL allows you to create individual Pokémon or multiple Pokémon using the 
 
 Create a Single Pokémon:
 dsl
-```bash
+```
 CREATE POKEMON { 
   NAME: "name", 
   TYPE: "type", 
@@ -53,7 +53,7 @@ CREATE POKEMON {
 ```
 Create Multiple Pokémon:
 dsl
-```bash
+```
 CREATE POKEMONS [  
   POKEMON { 
     NAME: "name", 
@@ -68,7 +68,7 @@ CREATE POKEMONS [
 ]
 ```
 Example:
-```bash
+```
 
 CREATE POKEMON { 
    NAME: "Pikachu", 
@@ -99,7 +99,7 @@ Ability Definition
 You can define abilities that Pokémon can use during battles. Abilities specify actions that may include conditional logic such as healing or damaging based on certain conditions.
 
 Create a Single Ability:
-```bash
+```
 CREATE ABILITY { 
  NAME: "ability_name", 
  ACTION: START  
@@ -108,7 +108,7 @@ CREATE ABILITY {
 }
 ```
 Create Multiple Abilities:
-```bash
+```
 CREATE ABILITIES [  
  ABILITY { 
   NAME: "ability_name", 
@@ -124,7 +124,7 @@ CREATE ABILITIES [
  } 
 ]
 ```
-```bash
+```
 CREATE ABILITY { 
  NAME: "Electric_Shock", 
  ACTION: START 
@@ -166,7 +166,7 @@ Teaching Abilities to Pokémon
 You can assign abilities to Pokémon using the following DSL construct:
 
 dsl
-```bash
+```
 DEAR "pokemon name" LEARN [ 
  ABILITY_NAME(ability_name) 
  ABILITY_NAME(ability_name) 
@@ -175,7 +175,7 @@ DEAR "pokemon name" LEARN [
 Example:
 
 dsl
-```bash
+```
 DEAR "Pikachu" LEARN [ 
  ABILITY_NAME(Electric_Shock) 
  ABILITY_NAME(Lightning_Rod) 
@@ -192,7 +192,7 @@ Makefile
 The project includes a Makefile for automating the compilation process. Below is the content of the Makefile:
 
 makefile
-```bash
+```
 CXX = g++
 CXXFLAGS = -std=c++11  -g
 
