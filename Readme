@@ -1,7 +1,8 @@
-# Pokémon DSL Game in C++
+
+# Pokemon DSL Game in C++
 
 ## Overview
-This project implements a **Domain-Specific Language (DSL)** using C++ for creating and managing 1v1 Pokémon battles. The DSL allows users to define Pokémon, set their abilities, and simulate battle scenarios by writing simple DSL code.
+This project implements a **Domain-Specific Language (DSL)** using C++ for creating and managing 1v1 PokΓ©mon battles. The DSL allows users to define PokΓ©mon, set their abilities, and simulate battle scenarios by writing simple DSL code.
 
 ## Compilation & Execution
 To compile the project and create the necessary executables, use the provided **Makefile**. The Makefile compiles the following files:
@@ -15,45 +16,46 @@ To compile the project, simply run the following command in the terminal:
 ```bash
 make
 ```
-Run the Program
+
+### Run the Program
 After compilation, you will have the following executables:
 
-CreateAbilities.out
-CreatePokemonsAndAbilities.out
-CreatePokemons.out
-main.out
-To run any of these executables, use the following command:
+- `CreateAbilities.out`
+- `CreatePokemonsAndAbilities.out`
+- `CreatePokemons.out`
+- `main.out`
 
-```
+To run any of these executables, use the following command:
+```bash
 ./<executable_name>
 ```
 For example:
-
-```
+```bash
 ./main.out
 ```
-Clean the Project
-To clean up the compiled files, run:
 
-```
+### Clean the Project
+To clean up the compiled files, run:
+```bash
 make clean
 ```
-Language Elements
-Pokémon Definitions
-The DSL allows you to create individual Pokémon or multiple Pokémon using the following syntax.
 
-Create a Single Pokémon:
-dsl
-```
+## Language Elements
+
+### PokΓ©mon Definitions
+The DSL allows you to create individual PokΓ©mon or multiple PokΓ©mon using the following syntax.
+
+#### Create a Single PokΓ©mon:
+```dsl
 CREATE POKEMON { 
   NAME: "name", 
   TYPE: "type", 
   HP: health_points 
 }
 ```
-Create Multiple Pokémon:
-dsl
-```
+
+#### Create Multiple PokΓ©mon:
+```dsl
 CREATE POKEMONS [  
   POKEMON { 
     NAME: "name", 
@@ -67,9 +69,9 @@ CREATE POKEMONS [
   } 
 ]
 ```
-Example:
-```
 
+#### Example:
+```dsl
 CREATE POKEMON { 
    NAME: "Pikachu", 
    TYPE: "Electric", 
@@ -95,11 +97,12 @@ CREATE POKEMONS [
    } 
 ]
 ```
-Ability Definition
-You can define abilities that Pokémon can use during battles. Abilities specify actions that may include conditional logic such as healing or damaging based on certain conditions.
 
-Create a Single Ability:
-```
+### Ability Definition
+You can define abilities that PokΓ©mon can use during battles. Abilities specify actions that may include conditional logic such as healing or damaging based on certain conditions.
+
+#### Create a Single Ability:
+```dsl
 CREATE ABILITY { 
  NAME: "ability_name", 
  ACTION: START  
@@ -107,8 +110,9 @@ CREATE ABILITY {
  END 
 }
 ```
-Create Multiple Abilities:
-```
+
+#### Create Multiple Abilities:
+```dsl
 CREATE ABILITIES [  
  ABILITY { 
   NAME: "ability_name", 
@@ -124,7 +128,9 @@ CREATE ABILITIES [
  } 
 ]
 ```
-```
+
+#### Example:
+```dsl
 CREATE ABILITY { 
  NAME: "Electric_Shock", 
  ACTION: START 
@@ -162,20 +168,19 @@ CREATE ABILITIES [
  } 
 ]
 ```
-Teaching Abilities to Pokémon
-You can assign abilities to Pokémon using the following DSL construct:
 
-dsl
-```
+### Teaching Abilities to PokΓ©mon
+You can assign abilities to PokΓ©mon using the following DSL construct:
+
+```dsl
 DEAR "pokemon name" LEARN [ 
  ABILITY_NAME(ability_name) 
  ABILITY_NAME(ability_name) 
 ]
 ```
-Example:
 
-dsl
-```
+#### Example:
+```dsl
 DEAR "Pikachu" LEARN [ 
  ABILITY_NAME(Electric_Shock) 
  ABILITY_NAME(Lightning_Rod) 
@@ -188,11 +193,11 @@ DEAR "Ho Oh" LEARN [
  ABILITY_NAME(Drought) 
 ]
 ```
-Makefile
+
+## Makefile
 The project includes a Makefile for automating the compilation process. Below is the content of the Makefile:
 
-makefile
-```
+```makefile
 CXX = g++
 CXXFLAGS = -std=c++11  -g
 
@@ -213,17 +218,6 @@ main.out: main.cpp
 clean:
 	rm -f *.out
 ```
-Conclusion
-This project demonstrates how a custom DSL can be built in C++ for a Pokémon game. The DSL simplifies the process of creating Pokémon, defining their abilities, and setting up battles by abstracting the underlying game logic. With the provided Makefile, compiling and running the game is straightforward.
 
-markdown
-
-
-### Key Sections:
-1. **Overview**: Briefly explains the purpose of the project.
-2. **Compilation & Execution**: Instructions on how to build and run the project using the provided Makefile.
-3. **Language Elements**: Examples of how to define Pokémon and abilities, with the syntax of your DSL.
-4. **Makefile**: The content of the Makefile for building the project.
-5. **Conclusion**: Summary of the project’s goals and what the DSL offers.
-
-This `README.md` should provide a clear and simple guide for users to understand how t
+## Conclusion
+This project demonstrates how a custom DSL can be built in C++ for a PokΓ©mon game. The DSL simplifies the process of creating PokΓ©mon, defining their abilities, and setting up battles by abstracting the underlying game logic. With the provided Makefile, compiling and running the game is straightforward.
